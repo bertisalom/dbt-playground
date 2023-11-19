@@ -20,11 +20,9 @@
             )
 
         select 
-        'DROP ' || drop_type || ' `'  || table_catalog || '`'  ||  table_schema || '.' || table_name || ';' as drop_query
+        'DROP ' || drop_type || ' `'  || table_catalog || '`.`'  ||  table_schema || '`.' || table_name || ';' as drop_query
         from source
-    {% endset %}
-
-    -- {% if execute %}
+    {% endset %} 
 
         {{ log('\nGenerating cleanup queries...\n', info=True) }}
 
@@ -38,6 +36,5 @@
                 {% do run_query(query) %} 
             {% endif %}       
         {% endfor %}
-    -- {% endif %}  
     
 {% endmacro %} 
