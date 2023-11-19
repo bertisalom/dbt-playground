@@ -11,9 +11,9 @@
         {{ log('SQL results: ' ~ results, info = True) }}
 
         {% if results == 'dbt' %}
-            dbt is very cool!
+            {{ log('dbt is very cool!', info = True) }}
         {% else %}
-            where is my dbt?
+            {{ log('where is my dbt?', info = True) }}
         {% endif %} 
     
     {% endif %}
