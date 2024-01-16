@@ -4,4 +4,3 @@ dbt_packages/
 logs/
 package-lock.yml
 .envrc
-google-service-account.json
